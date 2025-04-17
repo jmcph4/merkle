@@ -137,9 +137,7 @@ impl MerkleTree {
     /// Determines whether or not a given element is a member of the underlying
     /// Merkle set
     pub fn verify(&self, leaf: Digest, proof: Vec<Digest>) -> bool {
-        if proof.len() != self.height() {
-            false
-        } else if !self.leaves().contains(&leaf) {
+        if proof.len() != self.height() || !self.leaves().contains(&leaf) {
             false
         } else {
             loop {

@@ -182,6 +182,3 @@ impl MerkleTree {
         xs
     }
 }
-
-#[derive(Clone, Debug)]
-pub struct Proof(pub Vec<MerkleTree>);
